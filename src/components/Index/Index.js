@@ -1,4 +1,4 @@
-import React from './node_modules/react';
+import React from 'react';
 
 const Index = (props) => {
     return <h2>Index</h2>;

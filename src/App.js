@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
+
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Index from './components/Index/Index'
 import Plugins from './components/Plugins/Plugins'
 import Companies from './components/Companies/Companies'
+import api from '../src/api/api'
 import './App.css';
 
 function AppRouter() {
