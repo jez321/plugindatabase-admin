@@ -6,12 +6,12 @@ const Companies = (props) => {
     const [sortDir, setSortDir] = useState('desc');
     const [companies, setCompanies] = useState([]);
     useEffect(() => {
-        api.get(`deals?search=${searchTerm}&sortdir=${sortDir}`).then((response) => {
+        api.get(`companies?search=${searchTerm}&sortdir=${sortDir}`).then((response) => {
             setCompanies(response.data);
         });
     }, [searchTerm, sortDir]);
     const companyComponents = companies.map(c => {
-        return <tr><td>{c.name}</td><td><button className="space">Edit</button><button>Delete</button></td></tr>
+        return <tr><td>{c.name}</td><td>{new Date(c.created.replace(' ', 'T')).toLocaleDateString()}</td><td>{new Date(c.updated.replace(' ', 'T')).toLocaleDateString()}</td><td><button className="space">Edit</button><button>Delete</button></td></tr>
     })
     return (
         <React.Fragment>
@@ -20,6 +20,8 @@ const Companies = (props) => {
                 <thead>
                     <tr>
                         <th>Name</th>
+                        <th>Created</th>
+                        <th>Updated</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
