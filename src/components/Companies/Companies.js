@@ -11,7 +11,7 @@ const Companies = (props) => {
         });
     }, [searchTerm, sortDir]);
     const companyComponents = companies.map(c => {
-        return <tr><td>{c.name}</td><td>Actions</td></tr>
+        return <tr><td>{c.name}</td><td><button className="space">Edit</button><button>Delete</button></td></tr>
     })
     return (
         <React.Fragment>
@@ -19,8 +19,8 @@ const Companies = (props) => {
             <table className="table">
                 <thead>
                     <tr>
-                        <td>Name</td>
-                        <td>Actions</td>
+                        <th>Name</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
