@@ -7,6 +7,7 @@ $color-primary: #333;
   display:flex;
   justify-content: start;
   & > .nav-side {
+    width: 120px;
     a {
       text-decoration: none;
       &.active {
@@ -56,6 +57,14 @@ $color-primary: #333;
     }
     th, td {
       padding: 10px;
+    }
+    td {
+      .number-column {
+        text-align:right;
+      }
+      .actions {
+        white-space: nowrap;
+      }
     }
     thead tr th {
       font-weight: bold;
