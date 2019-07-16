@@ -12,11 +12,11 @@ import './App.scss';
 function AppRouter() {
   return (
     <Router>
-      <header class="header-top">
+      <header className="header-top">
         PluginDatabase Admin
       </header>
-      <div class="App">
-        <nav class="nav-side">
+      <div className="App">
+        <nav className="nav-side">
           <ul>
             <li>
               <NavLink exact activeClassName="active" to="/">Home</NavLink>

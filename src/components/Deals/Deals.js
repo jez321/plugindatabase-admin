@@ -12,10 +12,10 @@ const Deals = (props) => {
     }, [searchTerm, sortDir]);
     const dealComponents = deals.map(c => {
         return (
-            <tr>
+            <tr key={c.id_deal}>
                 <td>{c.name}</td>
                 <td>{c.company}</td>
-                <td class="number-column">{`$${c.price}`}</td>
+                <td className="number-column">{`$${c.price}`}</td>
                 <td>{c.description}</td>
                 <td>{c.start_date ? new Date(c.start_date.replace(' ', 'T')).toLocaleDateString() : ''}</td>
                 <td>{c.end_date ? new Date(c.end_date.replace(' ', 'T')).toLocaleDateString() : ''}</td>

@@ -11,7 +11,15 @@ const Plugins = (props) => {
         });
     }, [searchTerm, sortDir]);
     const pluginComponents = plugins.map(c => {
-        return <tr><td>{c.name}</td><td>{c.company}</td><td>{new Date(c.created.replace(' ', 'T')).toLocaleDateString()}</td><td>{new Date(c.updated.replace(' ', 'T')).toLocaleDateString()}</td><td><button className="space">Edit</button><button>Delete</button></td></tr>
+        return (
+            <tr key={c.id_plugin}>
+                <td>{c.name}</td>
+                <td>{c.company}</td>
+                <td>{new Date(c.created.replace(' ', 'T')).toLocaleDateString()}</td>
+                <td>{new Date(c.updated.replace(' ', 'T')).toLocaleDateString()}</td>
+                <td><button className="space">Edit</button><button>Delete</button></td>
+            </tr>
+        )
     })
     return (
         <React.Fragment>
