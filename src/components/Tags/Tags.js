@@ -11,7 +11,12 @@ const Tags = (props) => {
         });
     }, [searchTerm, sortDir]);
     const tagComponents = tags.map(c => {
-        return <tr><td>{c.name}</td><td><button className="space">Edit</button><button>Delete</button></td></tr>
+        return (
+            <tr>
+                <td>{c.name}</td> 
+                <td className="actions"><button className="space">Edit</button><button>Delete</button></td>
+            </tr>
+        )
     })
     return (
         <React.Fragment>

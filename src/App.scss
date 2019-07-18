@@ -1,5 +1,6 @@
 $section-padding: 10px 20px;
 $color-primary: #333;
+$shadow: #aaa 1px 1px 2px;
 
 .App {
   text-align: left;
@@ -36,7 +37,7 @@ $color-primary: #333;
     border-collapse: collapse;
     width: 100%;
     thead {
-      box-shadow: #aaa 1px 1px 2px
+      box-shadow:$shadow;
     }
     tbody tr {
       border-bottom: solid #eee 1px;
@@ -59,18 +60,20 @@ $color-primary: #333;
       padding: 10px;
     }
     td {
-      .number-column {
+      &.number-column {
         text-align:right;
       }
-      .actions {
+      &.actions {
         white-space: nowrap;
       }
     }
     thead tr th {
       font-weight: bold;
+      white-space: nowrap;
     }
   }
   button {
+    box-shadow: $shadow;
     background-color: $color-primary;
     color: white;
     border: none;

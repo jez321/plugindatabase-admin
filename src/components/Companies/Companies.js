@@ -11,7 +11,14 @@ const Companies = (props) => {
         });
     }, [searchTerm, sortDir]);
     const companyComponents = companies.map(c => {
-        return <tr><td>{c.name}</td><td>{new Date(c.created.replace(' ', 'T')).toLocaleDateString()}</td><td>{new Date(c.updated.replace(' ', 'T')).toLocaleDateString()}</td><td><button className="space">Edit</button><button>Delete</button></td></tr>
+        return (
+            <tr>
+                <td>{c.name}</td>
+                <td>{new Date(c.created.replace(' ', 'T')).toLocaleDateString()}</td>
+                <td>{new Date(c.updated.replace(' ', 'T')).toLocaleDateString()}</td>
+                <td className="actions"><button className="space">Edit</button><button>Delete</button></td>
+            </tr>
+        )
     })
     return (
         <React.Fragment>

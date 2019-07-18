@@ -15,6 +15,7 @@ const Deals = (props) => {
             <tr>
                 <td>{c.name}</td>
                 <td>{c.company}</td>
+                <td>{c.category}</td>
                 <td class="number-column">{`$${c.price}`}</td>
                 <td>{c.description}</td>
                 <td>{c.start_date ? new Date(c.start_date.replace(' ', 'T')).toLocaleDateString() : ''}</td>
@@ -22,7 +23,7 @@ const Deals = (props) => {
                 <td><a target="_blank" href={c.link.url}>{c.link.title}</a></td>
                 <td>{new Date(c.created.replace(' ', 'T')).toLocaleDateString()}</td>
                 <td>{new Date(c.updated.replace(' ', 'T')).toLocaleDateString()}</td>
-                <td><button className="space">Edit</button><button>Delete</button></td>
+                <td className="actions"><button className="space">Edit</button><button>Delete</button></td>
             </tr>
         )
     })
@@ -34,6 +35,7 @@ const Deals = (props) => {
                     <tr>
                         <th>Plugin</th>
                         <th>Company</th>
+                        <th>Category</th>
                         <th>Price</th>
                         <th>Description</th>
                         <th>Start date</th>
